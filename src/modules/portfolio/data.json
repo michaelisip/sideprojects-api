@@ -1,0 +1,136 @@
+{
+  "icon": "/portfolio/icons/icon.ico",
+  "name": "Michael John Isip",
+  "photo": "/portfolio/images/profile.jpg",
+  "resume": "/portfolio/Michael John Isip - Resume.pdf",
+  "email": "isipmichaeljohn@email.com",
+  "contact": "+639774255741",
+  "address": "Apalit, Pampanga, Philippines",
+  "about": "A weeb, a baller, and a software development enthusiast.",
+  "description": "An ambivert who loves sports especially basketball and athletics. I spent most of my primary and secondary years competiting to be a scholar on the schools I attended. Then one day, I discovered my love for programming back in college when we were tasked to develop a banking system as our school project. Since then, I pursued on improving and exploring the field of software development.",
+  "socials": [
+      {
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/in/michael-john-isip-1896b6143/",
+          "logo": "/portfolio/images/linkedin.png" 
+      },{
+          "name": "Dribble",
+          "url": "https://dribbble.com/ehemjii/",
+          "logo": "/portfolio/images/dribbble.png" 
+      },{
+          "name": "Github",
+          "url": "https://github.com/mj-isip23/",
+          "logo": "/portfolio/images/github.png" 
+      }
+  ],
+  "projects": [
+      {
+          "name": "LVCC Enrollment System",
+          "image": "/portfolio/images/enrollment.png",
+          "url": null,
+          "role": "Software Developer",
+          "description": "Our Capstone project during my senior year in college. Assigned on developing the admin side of the project which consists of different functionalities and modules.",
+          "technologies": [
+              "Laravel",
+              "Voyager"
+          ],
+          "status": "finished"
+      },
+      {
+          "name": "GYPS",
+          "image": "/portfolio/images/gyps.png",
+          "url": null,
+          "role": "Lead Developer",
+          "description": "A SAAS project which fetches businesses nearby a given address. Cancelled due to Google APIs limitations.",
+          "technologies": [
+              "Laravel",
+              "Vue",
+              "Spark",
+              "Google API",
+              "Stripe API"
+          ],
+          "status": "cancelled"
+      },
+      {
+          "name": "DashSMS",
+          "image": "/portfolio/images/dashsms.png",
+          "url": "https://dashsms.ph",
+          "role": "Web Developer",
+          "description": "A Shopify Application for tracking customer cart abandonments and notification system.",
+          "technologies": [
+              "Laravel",
+              "October CMS",
+              "Shopify"
+          ],
+          "status": "finished"
+      },
+      {
+          "name": "Authenticart",
+          "image": "/portfolio/images/authenticart.png",
+          "url": "https://authenticart.io",
+          "role": "Web Developer",
+          "description": "A Shopify Application that improves conversions and lower Return-to-Sender rates.",
+          "technologies": [
+              "Laravel",
+              "October CMS",
+              "Shopify"
+          ],
+          "status": "finished"
+      },
+      {
+          "name": "Azimuth",
+          "image": "/portfolio/images/azimuth.png",
+          "url": null,
+          "role": "Lead Developer",
+          "description": "An online examination system for Marine Engineering students of a client.",
+          "technologies": [
+              "Laravel",
+              "JQuery",
+              "QR Code Generator",
+              "Google Authenticator"
+          ],
+          "status": "finished"
+      },
+      {
+          "name": "Booble",
+          "image": "/portfolio/images/placeholder.png",
+          "url": null,
+          "role": "Part-time Developer",
+          "description": "A web application for a company based in Australia.",
+          "technologies": [
+              "Laravel",
+              "Jquery"
+          ],
+          "status": "finished"
+      },
+      {
+          "name": "Whisperio",
+          "image": "/portfolio/images/whisperio.png",
+          "url": "https://whisperio.netlify.com",
+          "role": "Developer",
+          "description": "A simple chat system built with React and Socket IO.",
+          "technologies": [
+              "React",
+              "NodeJS",
+              "ExpressJS",
+              "MongoDB",
+              "Socket IO"
+          ],
+          "status": "on-going"
+        },
+        {
+            "name": "ADD 3",
+            "image": "/portfolio/images/placeholder.png",
+            "url": "https://addthree.netlify.com",
+            "role": "Developer",
+            "description": "A simple web-based game built with MERN.",
+            "technologies": [
+              "MongoDB",
+              "React",
+              "ExpressJS",
+              "NodeJS"
+            ],
+            "status": "on-going"
+        }
+    ]
+}
