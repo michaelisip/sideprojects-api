@@ -3,40 +3,40 @@ const Room = require('../models/Room');
 
 class UserController {
   async index(field = null) {
-    this.users = await User.find({ ...field })
+    const users = await User.find({ ...field })
       .populate('room');
-    return this.users;
+    return users;
   }
 
   async show(id) {
-    this.user = await User.findById(id)
+    const user = await User.findById(id)
       .populate('room');
-    return this.user;
+    return user;
   }
 
   async store(body, room) {
-    this.userRoom = new Room({ name: room });
-    this.user = new User({ ...body });
-    this.userRoom.users.push(this.user);
-    await this.userRoom.save();
+    const userRoom = new Room({ name: room });
+    const user = new User({ ...body });
+    userRoom.users.push(user);
+    await userRoom.save();
 
-    this.user.room = this.userRoom;
-    await this.user.save();
+    user.room = userRoom;
+    await user.save();
 
-    this.user.populate('room');
-    return this.user;
+    user.populate('room');
+    return user;
   }
 
   async update(id, body) {
-    this.user = await User.findByIdAndUpdate(id, { ...body })
+    const user = await User.findByIdAndUpdate(id, { ...body })
       .populate('room');
-    return this.user;
+    return user;
   }
 
   async delete(id) {
-    this.user = await User.findByIdAndDelete(id)
+    const user = await User.findByIdAndDelete(id)
       .populate('room');
-    return this.user;
+    return user;
   }
 }
 
