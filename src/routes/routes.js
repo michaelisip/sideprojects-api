@@ -12,8 +12,8 @@ router.get('/', (req, res, next) => {
 });
 
 /** Modules */
-router.use(portfolio);
-router.use(addthree);
-router.use(whisperio);
+router.use('/portfolio', portfolio);
+router.use('/add-three', addthree);
+router.use('/whisperio', whisperio);
 
 module.exports = router;

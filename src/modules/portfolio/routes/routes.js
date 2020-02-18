@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const router = Router();
 
-router.get('/portfolio', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   fs.readFile(resolve(__dirname, '../data.json'), (err, json) => {
     if (err) next(err);
     const data = JSON.parse(json);
