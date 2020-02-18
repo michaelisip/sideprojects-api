@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const { join } = require('path');
 require('dotenv').config();
 
 const router = express.Router();
@@ -17,7 +18,7 @@ router.use(cors({
 router.use(express.json());
 router.use(helmet());
 router.use(morgan('common'));
-router.use(express.static('public'));
+router.use(express.static(join(__dirname, '../..', 'public')));
 
 /** Custom */
 // router.use(() => {});
