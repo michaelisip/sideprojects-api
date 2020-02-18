@@ -15,18 +15,20 @@ router.get('/', async (req, res, next) => {
 
 router.post('/resume/request', (req, res) => {
   const { name, email, message } = req.body;
+  const gmail = process.env.GOOGLE_MAIL || 'test@gmail.com';
+  const gpass = process.env.GOOGLE_PASSWORD || 'secretPasswordShh';
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.GOOGLE_MAIL,
-      pass: process.env.GOOGLE_PASSWORD,
+      user: gmail,
+      pass: gpass,
     },
   });
 
   const mailOptions = {
     from: `${name} <${email}>`,
-    to: `MichaelJohn Isip <${process.env.GOOGLE_MAIL}>`,
+    to: `MichaelJohn Isip <${gmail}>`,
     subject: `Resume Request | ${name}`,
     text: message,
   };

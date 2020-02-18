@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.BALLERS_PASSPORT_SECRET,
+  secretOrKey: process.env.BALLERS_PASSPORT_SECRET || 'superSecret',
 };
 
 const strategy = new Strategy(opts, async (payload, next) => {

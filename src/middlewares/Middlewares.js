@@ -10,9 +10,9 @@ const router = express.Router();
 /** Packages */
 router.use(cors({
   origin: [
-    process.env.PORTFOLIO_ORIGIN,
-    process.env.ADDTHREE_ORIGIN,
-    process.env.WHISPERIO_ORIGIN,
+    process.env.PORTFOLIO_ORIGIN || 'http://localhost:3000',
+    process.env.ADDTHREE_ORIGIN || 'http://localhost:3000',
+    process.env.WHISPERIO_ORIGIN || 'http://localhost:3000',
   ],
 }));
 router.use(express.json());

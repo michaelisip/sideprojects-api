@@ -6,7 +6,7 @@ const Socket = require('./utils/socketio');
 const routes = require('./routes/routes');
 
 const router = express.Router();
-const PORT = process.env.SOCKETIO_PORT;
+const PORT = process.env.SOCKETIO_PORT || '3001';
 
 const app = express();
 const server = http.createServer(app);
