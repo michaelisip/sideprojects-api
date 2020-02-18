@@ -30,14 +30,14 @@ Game.init({
 });
 
 /** Relationships */
-
 /**
- * https://medium.com/@tonyangelo9707/many-to-many-associations-using-sequelize-941f0b6ac102
- * many to many
+ * For some reason this doesn't work here,
+ * but it works on the user model
  */
-// Game.hasMany(User, {
+// Game.belongsToMany(User, {
 //   through: GameUser,
 // });
-// Game.belongsTo(Court); // one to many
+Game.belongsTo(Court);
+Court.hasMany(Game);
 
 module.exports = Game;

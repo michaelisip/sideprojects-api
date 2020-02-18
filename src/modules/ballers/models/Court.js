@@ -40,6 +40,10 @@ Court.init({
 });
 
 /** Relationships */
+/**
+ * For some reason this doesn't work here,
+ * but it works on the user model
+ */
 // Court.hasMany(Game);
 
 module.exports = Court;

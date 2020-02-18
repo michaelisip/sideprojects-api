@@ -25,6 +25,10 @@ Comment.init({
 });
 
 /** Relationships */
+/**
+ * For some reason these doesn't work here,
+ * but it works on the user and post model
+ */
 // Comment.belongsTo(User);
 // Comment.belongsTo(Post);
 

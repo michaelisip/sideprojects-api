@@ -4,6 +4,8 @@ const { genSaltSync, hashSync } = require('bcrypt');
 const sequelize = require('../utils/db');
 const Post = require('./Post');
 const Comment = require('./Comment');
+const Game = require('./Game');
+const GameUser = require('./pivot/GameUser');
 
 class User extends Model {}
 
@@ -46,8 +48,17 @@ User.init({
 });
 
 /** Relationships */
-// User.hasMany(Post); // one to many
-// User.hasMany(Comment); // one to many
+User.hasMany(Post);
+User.hasMany(Comment);
+User.belongsToMany(Game, {
+  through: GameUser,
+});
+
+Post.belongsTo(User);
+Comment.belongsTo(User);
+Game.belongsToMany(User, {
+  through: GameUser,
+});
 
 /** Notes */
 /**

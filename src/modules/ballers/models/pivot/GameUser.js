@@ -17,11 +17,7 @@ GameUser.init({
   timestamps: true,
   underscored: true,
   tableName: 'game_user',
-  modelName: 'game_user',
+  modelName: 'GameUser',
 });
-
-/** Relationships */
-// GameUser.belongsTo(User);
-// GameUser.belongsTo(Game);
 
 module.exports = GameUser;

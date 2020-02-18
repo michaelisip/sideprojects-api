@@ -34,8 +34,6 @@ CREATE TABLE IF NOT EXISTS `games` (
   `updated_at` timestamp NULL DEFAULT NULL,
   CONSTRAINT `fk_game_court`
     FOREIGN KEY (`court_id`) REFERENCES `courts` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `game_user` (
@@ -46,13 +44,9 @@ CREATE TABLE IF NOT EXISTS `game_user` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   CONSTRAINT `fk_game`
-    FOREIGN KEY (`game_id`) REFERENCES `games` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    FOREIGN KEY (`game_id`) REFERENCES `games` (`id`),
   CONSTRAINT `fk_user`
     FOREIGN KEY (`user_id`) REFERENCES `courts` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `posts` (
@@ -64,8 +58,6 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `updated_at` timestamp NULL DEFAULT NULL,
   CONSTRAINT `fk_user_post`
     FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `comments` (
@@ -77,11 +69,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   CONSTRAINT `fk_user_comment`
-    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_post_comment`
     FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
