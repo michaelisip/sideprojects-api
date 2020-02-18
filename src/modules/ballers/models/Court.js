@@ -1,5 +1,7 @@
 const { Model, STRING, INTEGER } = require('sequelize');
+
 const sequelize = require('../utils/db');
+const Game = require('./Game');
 
 class Court extends Model {}
 
@@ -32,12 +34,12 @@ Court.init({
 }, {
   sequelize,
   timestamps: true,
-  modelName: 'Court',
+  underscored: true,
+  tableName: 'courts',
+  modelName: 'court',
 });
 
-/** Notes */
-/**
- * Has many events
- */
+/** Relationships */
+// Court.hasMany(Game);
 
 module.exports = Court;

@@ -1,7 +1,9 @@
 const { Model, STRING, INTEGER } = require('sequelize');
-const { genSaltSync, hashSync, compareSync } = require('bcrypt');
+const { genSaltSync, hashSync } = require('bcrypt');
 
 const sequelize = require('../utils/db');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 class User extends Model {}
 
@@ -31,8 +33,9 @@ User.init({
 }, {
   sequelize,
   timestamps: true,
+  underscored: true,
   tableName: 'users',
-  modelName: 'User',
+  modelName: 'user',
   hooks: {
     beforeCreate: (user) => {
       const SALT = genSaltSync();
@@ -42,11 +45,14 @@ User.init({
   },
 });
 
+/** Relationships */
+// User.hasMany(Post); // one to many
+// User.hasMany(Comment); // one to many
+
 /** Notes */
 /**
  * Has one position
  * Has one 2k profile
- * Has many posts
  * Has many favorite players
  * Has many pictures
  * Has many videos

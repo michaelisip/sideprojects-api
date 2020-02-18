@@ -1,11 +1,11 @@
-const User = require('../models/User');
+const Game = require('../models/Game');
 
-class BallerController {
+class GameController {
   async index(req, res, next) {
     try {
-      const users = await User.findAll();
+      const games = await Game.findAll();
       res.json({
-        data: users,
+        data: games,
       });
     } catch (error) {
       next(error);
@@ -16,9 +16,9 @@ class BallerController {
     try {
       console.log(req.params);
       const { id } = req.params;
-      const user = await User.findByPk(id);
+      const game = await Game.findByPk(id);
       res.json({
-        data: user,
+        data: game,
       });
     } catch (error) {
       next(error);
@@ -27,9 +27,9 @@ class BallerController {
 
   async store(req, res, next) {
     try {
-      const user = await User.create(req.body);
+      const game = await Game.create(req.body);
       res.json({
-        data: user,
+        data: game,
       });
     } catch (error) {
       next(error);
@@ -39,9 +39,9 @@ class BallerController {
   async update(req, res, next) {
     try {
       const { id } = req.params;
-      const user = await (await User.findByPk(id)).update(req.body);
+      const game = await (await Game.findByPk(id)).update(req.body);
       res.json({
-        data: user,
+        data: game,
       });
     } catch (error) {
       next(error);
@@ -51,9 +51,9 @@ class BallerController {
   async delete(req, res, next) {
     try {
       const { id } = req.params;
-      const user = await (await User.findByPk(id)).destroy();
+      const game = await (await Game.findByPk(id)).destroy();
       res.json({
-        data: user,
+        data: game,
       });
     } catch (error) {
       next(error);
@@ -61,4 +61,4 @@ class BallerController {
   }
 }
 
-module.exports = new BallerController();
+module.exports = new GameController();
