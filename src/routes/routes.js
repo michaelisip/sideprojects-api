@@ -3,6 +3,7 @@ const { Router } = require('express');
 const portfolio = require('../modules/portfolio/index');
 const addthree = require('../modules/add-three/index');
 const whisperio = require('../modules/whisperio/index');
+const ballers = require('../modules/ballers/index');
 
 const router = Router();
 
@@ -15,5 +16,6 @@ router.get('/', (req, res, next) => {
 router.use('/portfolio', portfolio);
 router.use('/add-three', addthree);
 router.use('/whisperio', whisperio);
+router.use('/ballers', ballers);
 
 module.exports = router;
